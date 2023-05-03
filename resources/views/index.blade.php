@@ -12,6 +12,9 @@
 <body>
     <section class="py-5">
         <div class="container">
+            <div class="py-5">
+                <a href="{{ route('home.index') }}" class="btn btn-primary"> Start And End Date Filter </a>
+            </div>
             <div class="card p-2">
                 <div class="card-header text-center">
                     <div class="">

@@ -13,7 +13,7 @@
     <section class="py-5">
         <div class="container">
             <div class="py-5">
-                <a href="" class="btn btn-primary"> Date Filter Laravel 10</a>
+                <a href="{{ route('employee') }}" class="btn btn-primary"> Smart Date Filter Search </a>
             </div>
             <div class="card py-2">
                 <div class="card-header text-center">
@@ -39,9 +39,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="car-body py-5">
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
+                <div class="car-body py-4">
+                    <div class="">
+                        <div class="">
                             <table class="table table-bordered text-center">
                                 <thead class="thead-dark">
                                     <tr>

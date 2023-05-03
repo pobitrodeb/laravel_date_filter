@@ -16,9 +16,11 @@
             <div class="card py-2">
                 <div class="card-header text-center">
                    <div class="container">
-                    <form action="">
+                    <form action="/filter"  method="GET">
                         <div class="row">
-                            <div class="col-md-3"></div>
+                            <div class="col-md-3">
+
+                            </div>
                             <div class="col-md-3">
                                 <label for=""> Start Date </label>
                                 <input type="date" class="form-control" name="start_date">
@@ -35,7 +37,7 @@
                         </form>
                    </div>
                 </div>
-                <div class="car-body">
+                <div class="car-body py-5">
                     <div class="row">
                         <div class="col-md-8 mx-auto">
                             <table class="table table-bordered text-center">
@@ -60,7 +62,9 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="card-footer text-center">
+                    <p>www.pobitrodeb.com</p>
+                </div>
             </div>
         </div>
     </section>

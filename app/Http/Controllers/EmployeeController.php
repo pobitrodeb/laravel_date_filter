@@ -32,6 +32,15 @@ class EmployeeController extends Controller
               break;
             case 'last_week' :
                 $query->whereBetween('created_at',[Carbon::now()->subWeek(), Carbon::now()] );
+                break;
+            case 'this_month' :
+                $query->whereMonth('created_at', Carbon::now()->month);
+                break;
+            case 'last_month' :
+                $query->whereMonth('created_at', Carbon::now()->subMonth()->month);
+                break;
+
+
         }
         $employees = $query->get();
 

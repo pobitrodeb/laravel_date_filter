@@ -22,10 +22,10 @@ class EmployeeController extends Controller
                 Employee::all();
                 break;
             case 'today' :
-                $query->whereDate('created_at', Carbon::today());
+                $query->whereDate('created_at',Carbon::today());
               break;
             case 'yesterday' :
-                $query->whereDate('created_at', Carbon::yesterday());
+                $query->whereDate('created_at',Carbon::yesterday());
               break;
             case 'the_week' :
                 $query->whereBetween('created_at',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()]);
@@ -34,18 +34,18 @@ class EmployeeController extends Controller
                 $query->whereBetween('created_at',[Carbon::now()->subWeek(), Carbon::now()] );
                 break;
             case 'this_month' :
-                $query->whereMonth('created_at', Carbon::now()->month);
+                $query->whereMonth('created_at',Carbon::now()->month);
                 break;
             case 'last_month' :
-                $query->whereMonth('created_at', Carbon::now()->subMonth()->month);
+                $query->whereMonth('created_at',Carbon::now()->subMonth()->month);
                 break;
 
             case 'this_year' :
-                $query->whereYear('created_at', Carbon::now()->year);
+                $query->whereYear('created_at',Carbon::now()->year);
                 break;
 
             case 'last_year' :
-                $query->whereYear('created_at', Carbon::now()->subYear()->year);
+                $query->whereYear('created_at',Carbon::now()->subYear()->year);
                 break;
         }
         $employees = $query->get();

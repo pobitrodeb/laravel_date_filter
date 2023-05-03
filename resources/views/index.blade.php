@@ -11,69 +11,74 @@
 
 <body>
     <section class="py-5">
-        <div class="">
-            <div class="card py-2">
+        <div class="container">
+            <div class="card p-2">
                 <div class="card-header text-center">
-                    <div class="container">
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <div class="form-group">
+                                    <form action="" method="GET">
+                                        <div class="input-group">
+                                            <select class="form-select" name="date_filter">
+                                                <option value="all_date"> All Date </option>
+                                                <option value="today">Today </option>
+                                                <option value="yesterday">Yesterday</option>
+                                                <option value="the_week">This Week</option>
+                                                <option value="last_week">Last Week</option>
+                                                <option value="this_month">This Month</option>
+                                                <option value="last_month">Last Month</option>
+                                                <option value="this_year">This Year</option>
+                                                <option value="last_year">Last Year</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-primary"> Filter </button>
+                                        </div>
 
-                        <div class="form-group">
-                            <label for=""> Date Filter </label>
-                            <form action="" method="GET">
-                                <div class="input-group">
-                                    <select class="form-select" name="date_filter">
-                                        <option value="all_date"> All Date </option>
-                                        <option value="today">Today </option>
-                                        <option value="yesterday">Yesterday</option>
-                                        <option value="the_week">This Week</option>
-                                        <option value="last_week">Last Week</option>
-                                        <option value="this_month">This Month</option>
-                                        <option value="last_month">Last Month</option>
-                                        <option value="this_year">This Year</option>
-                                        <option value="last_year">Last Year</option>
-                                    </select>
-                                    <button type="submit" class="btn btn-primary"> Filter </button>
+                                    </form>
                                 </div>
 
-                            </form>
-                        </div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
 
                 <div class="car-body py-2">
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
-                            <table class="table table-bordered text-center">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">First Name </th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Position</th>
-                                        <th scope="col">Date Created </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($employees as $employee)
-                                        <tr>
-                                            <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $employee->id }}</td>
-                                            <td>{{ $employee->name }}</td>
-                                            <td>{{ $employee->last_name }}</td>
-                                            <td>{{ $employee->email }}</td>
-                                            <td>{{ $employee->gender }}</td>
-                                            <td>{{ $employee->position }}</td>
-                                            <td>{{ $employee->created_at->diffForHumans()}}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">SL</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name </th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Position</th>
+                                <th scope="col">Date Created </th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        </div>
-                    </div>
+                            @forelse ($employees as $employee)
+                                <tr>
+                                    <th scope="row">{{ $loop->iteration }}</th>
+                                    <td>{{ $employee->id }}</td>
+                                    <td>{{ $employee->name }}</td>
+                                    <td>{{ $employee->last_name }}</td>
+                                    <td>{{ $employee->email }}</td>
+                                    <td>{{ $employee->gender }}</td>
+                                    <td>{{ $employee->position }}</td>
+                                    <td>{{ $employee->created_at->diffForHumans() }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <h3 class="bg-danger text-white"> Not Found Data </h3>
+                                </tr>
+                            @endforelse
+
+                        </tbody>
+                    </table>
+
                 </div>
                 <div class="card-footer text-center">
                     <p>www.pobitrodeb.com</p>

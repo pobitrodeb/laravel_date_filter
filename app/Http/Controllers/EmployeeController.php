@@ -40,7 +40,13 @@ class EmployeeController extends Controller
                 $query->whereMonth('created_at', Carbon::now()->subMonth()->month);
                 break;
 
+            case 'this_year' :
+                $query->whereYear('created_at', Carbon::now()->year);
+                break;
 
+            case 'last_year' :
+                $query->whereYear('created_at', Carbon::now()->subYear()->year);
+                break;
         }
         $employees = $query->get();
 

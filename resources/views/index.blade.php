@@ -29,7 +29,7 @@
                                         <option value="this_month">This Month</option>
                                         <option value="last_month">Last Month</option>
                                         <option value="this_year">This Year</option>
-                                        <option value="last_month">Last Month</option>
+                                        <option value="last_year">Last Year</option>
                                     </select>
                                     <button type="submit" class="btn btn-primary"> Filter </button>
                                 </div>

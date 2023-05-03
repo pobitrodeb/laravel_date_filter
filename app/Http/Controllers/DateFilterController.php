@@ -26,7 +26,9 @@ class DateFilterController extends Controller
         case 'today' :
             $query->whereDate('created_at', Carbon::today());
           break;
-        
+        case 'yesterday' :
+            $query->whereDate('created_at', Carbon::yesterday());
+          break;
     }
     $users = $query->get();
     return view('index',compact('users'));

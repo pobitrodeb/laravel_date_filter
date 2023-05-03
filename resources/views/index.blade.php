@@ -21,11 +21,11 @@
                             <form action="" method="GET">
                                 <div class="input-group">
                                     <select class="form-select" name="date_filter">
-                                        <option value=""> All Date </option>
+                                        <option value="all_date"> All Date </option>
                                         <option value="today">Today </option>
                                         <option value="yesterday">Yesterday</option>
-                                        <option value="this_weak">This Weak</option>
-                                        <option value="last_weak">Last Weak</option>
+                                        <option value="the_week">This Week</option>
+                                        <option value="last_week">Last Week</option>
                                         <option value="this_month">This Month</option>
                                         <option value="last_month">Last Month</option>
                                         <option value="this_year">This Year</option>

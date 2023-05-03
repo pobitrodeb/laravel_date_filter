@@ -18,12 +18,20 @@ class EmployeeController extends Controller
         $query = Employee::query();
         $date      = $request->date_filter;
         switch($date){
+            case 'all_date' :
+                Employee::all();
+                break;
             case 'today' :
                 $query->whereDate('created_at', Carbon::today());
               break;
             case 'yesterday' :
                 $query->whereDate('created_at', Carbon::yesterday());
               break;
+            case 'the_week' :
+                $query->whereBetween('created_at',[Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()]);
+              break;
+            case 'last_week' :
+                $query->whereBetween('created_at',[Carbon::now()->subWeek(), Carbon::now()] );
         }
         $employees = $query->get();
 

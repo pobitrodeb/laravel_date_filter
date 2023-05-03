@@ -29,6 +29,9 @@ class DateFilterController extends Controller
         case 'yesterday' :
             $query->whereDate('created_at', Carbon::yesterday());
           break;
+        case 'this_week' :
+            $query->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()]);
+        break;
     }
     $users = $query->get();
     return view('index',compact('users'));

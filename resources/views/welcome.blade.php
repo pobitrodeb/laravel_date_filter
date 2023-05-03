@@ -10,32 +10,34 @@
 </head>
 
 <body>
-
     <section class="py-5">
         <div class="container">
+            <div class="py-5">
+                <a href="" class="btn btn-primary"> Date Filter Laravel 10</a>
+            </div>
             <div class="card py-2">
                 <div class="card-header text-center">
-                   <div class="container">
-                    <form action="/filter"  method="GET">
-                        <div class="row">
-                            <div class="col-md-3">
+                    <div class="container">
+                        <form action="/filter" method="GET">
+                            <div class="row">
+                                <div class="col-md-3">
 
+                                </div>
+                                <div class="col-md-3">
+                                    <label for=""> Start Date </label>
+                                    <input type="date" class="form-control" name="start_date">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for=""> End Date </label>
+                                    <input type="date" class="form-control" name="end_date">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for=""></label>
+                                    <input type="submit" value="Filter" class="form-control bg-primary text-white sm">
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <label for=""> Start Date </label>
-                                <input type="date" class="form-control" name="start_date">
-                            </div>
-                            <div class="col-md-3">
-                                <label for=""> End Date </label>
-                                <input type="date" class="form-control" name="end_date">
-                            </div>
-                            <div class="col-md-3">
-                                <label for=""></label>
-                            <input type="submit" value="Filter" class="form-control bg-primary text-white sm">
-                            </div>
-                        </div>
                         </form>
-                   </div>
+                    </div>
                 </div>
                 <div class="car-body py-5">
                     <div class="row">
@@ -49,13 +51,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   @foreach ($users as $user)
-                                   <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                </tr>
-                                   @endforeach
+                                    @foreach ($users as $user)
+                                        <tr>
+                                            <th scope="row">{{ $loop->iteration }}</th>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 
